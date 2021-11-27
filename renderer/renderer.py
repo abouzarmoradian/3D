@@ -8,11 +8,11 @@ from .utils import get_face_idx, get_grid, get_textures_from_im, get_transform_m
 
 EPS = 1e-7
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 
 class Renderer:
     def __init__(self, cfgs):
-        self.device =  device 
+        self.device =  cfgs.get("device", "cuda") 
         self.image_size = cfgs.get("image_size", 64)
         self.min_depth = cfgs.get("min_depth", 0.9)
         self.max_depth = cfgs.get("max_depth", 1.1)
