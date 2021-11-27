@@ -11,7 +11,7 @@ EPS = 1e-7
 
 class Renderer:
     def __init__(self, cfgs):
-        self.device = cfgs.get("device", "cpu")
+        self.device = cfgs.get("device", "cuda")
         self.image_size = cfgs.get("image_size", 64)
         self.min_depth = cfgs.get("min_depth", 0.9)
         self.max_depth = cfgs.get("max_depth", 1.1)
